@@ -1,1 +1,40 @@
 
+
+CREATE PROCEDURE EmployeeMenu(
+    IN choice INT,
+    IN id INT,
+    IN name VARCHAR(100),
+    IN sal DECIMAL(10,2)
+)
+BEGIN
+    CASE choice
+
+        WHEN 1 THEN
+            INSERT INTO Employee
+            VALUES (id, name, sal);
+            SELECT 'Employee inserted successfully' AS Message;
+
+        WHEN 2 THEN
+            UPDATE Employee
+            SET salary = sal
+            WHERE emp_id = id;
+            SELECT 'Salary updated successfully' AS Message;
+
+        WHEN 3 THEN
+            DELETE FROM Employee
+            WHERE emp_id = id;
+            SELECT 'Employee deleted successfully' AS Message;
+
+        WHEN 4 THEN
+            SELECT * FROM Employee;
+
+        WHEN 5 THEN
+            SELECT 'Exit program' AS Message;
+
+        ELSE
+            SELECT 'Invalid choice' AS Message;
+
+    END CASE;
+END //
+
+
