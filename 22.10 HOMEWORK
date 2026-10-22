@@ -1,0 +1,103 @@
+1)
+-- 1. Create Table
+CREATE TABLE bank_account (
+    account_id INT PRIMARY KEY,
+    account_holder VARCHAR(50),
+    balance DECIMAL(10,2)
+);
+
+-- 2. Insert Records
+INSERT INTO bank_account VALUES
+(101, 'Arun', 5000.00),
+(102, 'Priya', 8000.00),
+(103, 'Kumar', 10000.00);
+
+-- 3. Display Records
+SELECT * FROM bank_account;
+
+-- 4. Start Transaction
+START TRANSACTION;
+
+-- 5. Update Balance
+UPDATE bank_account
+SET balance = 7000.00
+WHERE account_id = 101;
+
+-- 6. Check Updated Balance
+SELECT * FROM bank_account;
+
+-- 7. Rollback Transaction
+ROLLBACK;
+
+-- 8. Check Balance After Rollback
+SELECT * FROM bank_account;
+
+
+2)
+-- 1. Create Table
+CREATE TABLE bank_account (
+    account_id INT PRIMARY KEY,
+    account_holder VARCHAR(50),
+    balance DECIMAL(10,2)
+);
+
+-- 2. Insert Records
+INSERT INTO bank_account VALUES
+(101, 'Arun', 5000.00),
+(102, 'Priya', 8000.00),
+(103, 'Kumar', 10000.00);
+
+-- 3. Display Records
+SELECT * FROM bank_account;
+
+-- 4. Start Transaction
+START TRANSACTION;
+
+-- 5. Update Balance
+UPDATE bank_account
+SET balance = 7000.00
+WHERE account_id = 101;
+
+-- 6. Check Updated Balance
+SELECT * FROM bank_account;
+
+-- 7. Rollback Transaction
+ROLLBACK;
+
+-- 8. Check Balance After Rollback
+SELECT * FROM bank_account;
+
+3)
+
+DELIMITER //
+
+CREATE PROCEDURE view_menu(IN choice INT)
+BEGIN
+    CASE choice
+
+        WHEN 1 THEN
+            CREATE OR REPLACE VIEW employee_view AS
+            SELECT emp_id, emp_name, salary
+            FROM employee;
+
+        WHEN 2 THEN
+            SELECT * FROM employee_view;
+
+        WHEN 3 THEN
+            UPDATE employee_view
+            SET salary = 35000
+            WHERE emp_id = 1;
+
+        WHEN 4 THEN
+            DROP VIEW IF EXISTS employee_view;
+
+        WHEN 5 THEN
+            SELECT 'Exit selected' AS Message;
+
+        ELSE
+            SELECT 'Invalid Choice' AS Message;
+
+    END CASE;
+END //
+
+DELIMITER ;
