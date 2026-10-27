@@ -1,0 +1,29 @@
+12 )
+public class Main {
+    public static void main(String[] args) {
+        int[] points = {5, 3, 8, 2};
+        int total = 0;
+
+        for (int i = 0; i < points.length; i++) {
+            total = total + points[i];
+        }
+
+        System.out.println(total);
+    }
+}
+
+
+11 )
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Steps to Place an Online Order</h2>
+<ol>
+  <li>Choose product</li>
+  <li>Add to cart</li>
+  <li>Enter address</li>
+  <li>Make payment</li>
+  <li>Order placed</li>
+</ol>
+</body>
+</html>
