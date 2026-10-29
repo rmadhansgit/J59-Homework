@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+<h2>Menu Driven Calculator</h2>
+
+First Number:
+<input type="number" id="n1"><br><br>
+
+Second Number:
+<input type="number" id="n2"><br><br>
+
+<select id="op">
+    <option value="+">Addition</option>
+    <option value="-">Subtraction</option>
+    <option value="*">Multiplication</option>
+    <option value="/">Division</option>
+    <option value="%">Modulus</option>
+</select><br><br>
+
+<button onclick="calc()">Calculate</button>
+<button onclick="reset()">Reset</button>
+
+<p id="result">Result:</p>
+
+<script>
+function calc() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    let op = document.getElementById("op").value;
+    let r;
+
+    if (op == "+")
+        r = a + b;
+    else if (op == "-")
+        r = a - b;
+    else if (op == "*")
+        r = a * b;
+    else if (op == "/")
+        r = b != 0 ? a / b : "Cannot divide by zero";
+    else
+        r = b != 0 ? a % b : "Cannot divide by zero";
+
+    document.getElementById("result").innerHTML =
+        "Result: " + r;
+}
+
+function reset() {
+    document.getElementById("n1").value = "";
+    document.getElementById("n2").value = "";
+    document.getElementById("result").innerHTML = "Result:";
+}
+</script>
+
+</body>
+</html>
