@@ -1,0 +1,39 @@
+
+var name="madhan";
+console.log("name :", name);
+
+age=21;
+console.log("age :", age );
+city="madurai";
+console.log("city :", city);
+
+/*second program*/
+
+let a=10;
+
+let b=20;
+
+let sum=a+b;
+
+console.log("sum:" , sum);
+
+/*third program*/
+
+let aa=10;
+
+var bb=20;
+
+const cc=30;
+
+function raj(){
+
+if(true){
+    console.log(bb);
+    console.log(aa);
+    console.log(cc);
+}
+}
+    raj();
+ console.log(bb);
+    console.log(aa);
+    console.log(cc);
