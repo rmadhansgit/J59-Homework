@@ -1,0 +1,17 @@
+let mark = 85;
+
+if (mark >= 90) {
+    console.log("A Grade");
+}
+else if (mark >= 80) {
+    console.log("B Grade");
+}
+else if (mark >= 70) {
+    console.log("C Grade");
+}
+else if (mark >= 35) {
+    console.log("Pass");
+}
+else {
+    console.log("Fail");
+}
